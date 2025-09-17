@@ -1,0 +1,25 @@
+package clase5;
+
+public class CuentaBancaria {
+    
+    private String cbu;
+    private double saldo;
+    private ClaveSeguridad clave; // composicion
+    private Titular2 titular2; // asociacion bidireccional
+
+    public CuentaBancaria(String cbu, double saldo, ClaveSeguridad clave, Titular2 titular2) {
+        
+        this.cbu = cbu;
+        this.saldo = saldo;
+        this.clave = clave;
+        this.titular2 = titular2;
+        titular2.setCuenta(this);
+        
+    }
+
+    public String getCbu() { return cbu; }
+    public double getSaldo() { return saldo; }
+    public ClaveSeguridad getClave() { return clave; }
+    public Titular2 getTitular2() { return titular2; }
+    
+}
